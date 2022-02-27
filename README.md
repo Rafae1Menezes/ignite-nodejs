@@ -16,3 +16,12 @@ Esse repositório trás todas as atividades práticas realizadas no curso por mi
 -  [x] Utilizando a biblioteca uuid
 -  [x] Criando Middlewares 
 -  [x] Trabalhando com requisitos e regras de negócio
+
+## Capter 2
+
+### Iniciando a API
+-  [x] Usando typescript
+-  [x] Configurando tsconfig.json
+-  [x] 
+-  [x] 
+-  [x] 
