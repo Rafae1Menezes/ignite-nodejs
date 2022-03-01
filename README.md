@@ -22,6 +22,16 @@ Esse repositório trás todas as atividades práticas realizadas no curso por mi
 ### Iniciando a API
 -  [x] Usando typescript
 -  [x] Configurando tsconfig.json
--  [x] 
--  [x] 
--  [x] 
+-  [x] Trabalhando tipos e parâmetros obrigatórios e opcionais.
+-  [x] Configurando ts-node-dev para ficar responsável pela conversão do typescript para javascript
+-  [x] Configurando ESlint e Prettier
+-  [x] Usando o debug do VSCode
+-  [x] Criando tipagens que geram automaticamente um uuid
+-  [x] Aplicando os principios S.O.L.I.D. de arquitetura limpa
+-  [x] Separando a api em módulos
+-  [x] Utilizando rotas, controllers e useCases
+-  [x] Criando uma classe Singleton Pattern
+-  [x] Upload de arquivos com multer
+-  [x] Ultilizando stream
+-  [x] Inserindo dados de um arquivo svg no repositório
+-  [x] Documetação das rotas com Swagger
