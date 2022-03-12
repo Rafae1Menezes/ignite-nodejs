@@ -8,7 +8,7 @@ Não deve ser possível cadasrar um carro com uma placada já existente.
 O carro deve ser cadasrado, por padão, com disponibilidade.
 O usuário responsável pelo cadastro deve ser um usuário adminstrador.
 
-# Listagem de carros
+# Listagem de carros disponíveis
 
 **RF**
 Deve ser possível listar todos os carro disponíveis.
@@ -23,8 +23,6 @@ O usuário não precisa esgtar logado no sistema.
 
 **RF**
 Nao eve ser possível cadastrar uma especificação para um carro.
-Deve ser possível listar todas as especificaçãos.
-Deve ser possível listar todos os carros.
 
 **RN**
 Não deve ser posível cadastrar uma especificação para um carro não cadastrado.
