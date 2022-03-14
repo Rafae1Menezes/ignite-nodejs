@@ -33,10 +33,9 @@ O usuário repsonsável pelo cadastro de ver um usuário adminstrador.
 
 **RF**
 Deve ser possível cadasrar a imagem do carro.
-Deve ser possível listar todos os carros.
 
 **RNF**
-Utilizar o mmuter para upload dos arquivos.
+Utilizar o multer para upload dos arquivos.
 
 **RN**
 O usuário deve poder cadastrar mais de uma imagem para o mesmo carro.
