@@ -13,6 +13,11 @@ class CarsRepositoryInMemory implements ICarsRepository {
     return car;
   }
 
+  async updateAvailable(id: string, available: boolean): Promise<void> {
+    const car = await this.findById(id);
+    car.available = available;
+  }
+
   async findByLicensePlate(license_plate: string): Promise<Car> {
     return this.repository.find((car) => car.license_plate === license_plate);
   }
@@ -20,7 +25,7 @@ class CarsRepositoryInMemory implements ICarsRepository {
   async findAvailable(
     brand?: string,
     category_id?: string,
-    name?: string
+    name?: string,
   ): Promise<Car[]> {
     return this.repository.filter((car) => {
       if (car.available) {
@@ -28,9 +33,9 @@ class CarsRepositoryInMemory implements ICarsRepository {
           return true;
         }
         if (
-          car.brand === brand ||
-          car.category_id === category_id ||
-          car.name === name
+          car.brand === brand
+          || car.category_id === category_id
+          || car.name === name
         ) {
           return true;
         }
