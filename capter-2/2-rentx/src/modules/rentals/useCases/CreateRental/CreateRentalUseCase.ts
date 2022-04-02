@@ -24,7 +24,7 @@ class CreateRentalUseCase {
     @inject('DateProvider')
     private dateProvider: IDateProvider,
     @inject('CarsRepository')
-    private carsRepository: ICarsRepository,
+    private carsRepository: ICarsRepository
   ) {}
 
   async execute(data: IRequest): Promise<Rental> {
@@ -32,7 +32,7 @@ class CreateRentalUseCase {
     const minimumMinutes = minimumHours * 60 - 1;
 
     const carUnavailable = await this.rentalRepository.findOpenRentalByCar(
-      data.car_id,
+      data.car_id
     );
 
     if (carUnavailable) {
@@ -40,7 +40,7 @@ class CreateRentalUseCase {
     }
 
     const rentalOpenToUser = await this.rentalRepository.findOpenRentalByUser(
-      data.user_id,
+      data.user_id
     );
 
     if (rentalOpenToUser) {
@@ -49,7 +49,7 @@ class CreateRentalUseCase {
 
     const minutes = this.dateProvider.compareInMinutes(
       this.dateProvider.dateNow(),
-      data.expected_return_date,
+      data.expected_return_date
     );
 
     if (minutes < minimumMinutes) {

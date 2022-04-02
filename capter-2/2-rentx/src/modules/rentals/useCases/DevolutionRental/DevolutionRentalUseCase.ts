@@ -7,7 +7,7 @@ import { IDateProvider } from '@shared/container/providers/DateProvider/IDatePro
 import { AppError } from '@shared/errors/AppError';
 
 interface IRequest {
-    id: string;
+  id: string;
 }
 
 @injectable()
@@ -18,12 +18,10 @@ class DevolutionRentalUseCase {
     @inject('DateProvider')
     private dateProvider: IDateProvider,
     @inject('CarsRepository')
-    private carsRepository: ICarsRepository,
+    private carsRepository: ICarsRepository
   ) {}
 
   async execute({ id }: IRequest): Promise<Rental> {
-    const minimum_daily = 1;
-
     const rental = await this.rentalRepository.findById(id);
     const car = await this.carsRepository.findById(rental.car_id);
 
@@ -33,16 +31,20 @@ class DevolutionRentalUseCase {
 
     let daily = this.dateProvider.compareInDays(
       rental.start_date,
-      this.dateProvider.dateNow(),
+      this.dateProvider.dateNow()
     );
 
     if (daily <= 0) {
-      daily = minimum_daily;
+      daily =
+        this.dateProvider.compareInDays(
+          rental.start_date,
+          rental.expected_return_date
+        ) + 1;
     }
 
     const delay = this.dateProvider.compareInDays(
-      this.dateProvider.dateNow(),
       rental.expected_return_date,
+      this.dateProvider.dateNow()
     );
 
     let total = 0;
