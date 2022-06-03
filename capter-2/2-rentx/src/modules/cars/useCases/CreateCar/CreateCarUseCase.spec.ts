@@ -1,4 +1,5 @@
 import { CarsRepositoryInMemory } from '@modules/cars/repositories/in-memory/CarsRepositoryInMemory';
+
 import { AppError } from '@shared/errors/AppError';
 
 import { CreateCarUseCase } from './CreateCarUseCase';
@@ -26,21 +27,22 @@ describe('Create Car', () => {
     expect(newCar).toHaveProperty('id');
   });
 
-  it('should not be able to create a car with exist license plate', () => {
-    expect(async () => {
-      const newCar = {
-        name: 'Name Car',
-        description: 'Description car',
-        daily_rate: 100,
-        license_plate: 'ABC-1234',
-        fine_amount: 60,
-        brand: 'Brand',
-        category_id: 'categoryuuid',
-      };
+  it('should not be able to create a car with exist license plate', async () => {
+    const newCar = {
+      name: 'Name Car',
+      description: 'Description car',
+      daily_rate: 100,
+      license_plate: 'ABC-1234',
+      fine_amount: 60,
+      brand: 'Brand',
+      category_id: 'categoryuuid',
+    };
 
-      await createCarUseCase.execute(newCar);
-      await createCarUseCase.execute(newCar);
-    }).rejects.toBeInstanceOf(AppError);
+    await createCarUseCase.execute(newCar);
+
+    await expect(createCarUseCase.execute(newCar)).rejects.toEqual(
+      new AppError('Car already exists')
+    );
   });
 
   it('should not be able to create a car with available true by default', async () => {
