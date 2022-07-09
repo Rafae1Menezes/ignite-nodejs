@@ -1,5 +1,6 @@
-import { RefreshTokenController } from '@modules/accounts/useCases/refreshToken/RefreshTokenController';
 import { Router } from 'express';
+
+import { RefreshTokenController } from '@modules/accounts/useCases/refreshToken/RefreshTokenController';
 
 import { AuthenticationUserController } from '../../../../modules/accounts/useCases/AuthenticationUser/AuthenticationUserController';
 

@@ -1,8 +1,8 @@
 import auth from '@config/auth';
-import { IUsersTokensRepository } from '@modules/accounts/repositories/IUsersTokensRepository';
 import { sign, verify } from 'jsonwebtoken';
 import { inject, injectable } from 'tsyringe';
 
+import { IUsersTokensRepository } from '@modules/accounts/repositories/IUsersTokensRepository';
 import { IDateProvider } from '@shared/container/providers/DateProvider/IDateProvider';
 import { AppError } from '@shared/errors/AppError';
 

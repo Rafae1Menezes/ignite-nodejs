@@ -1,8 +1,9 @@
+import { Router } from 'express';
+
 import { ListAvailableCarsController } from '@modules/cars/useCases/ListAvailableCars/ListAvailableCarsController';
 import { CreateRentalController } from '@modules/rentals/useCases/CreateRental/CreateRentalController';
 import { DevolutionRentalController } from '@modules/rentals/useCases/DevolutionRental/DevolutionRentalController';
 import { ListRentalsByUserController } from '@modules/rentals/useCases/ListRentalsByUser/ListRentalsByUserController';
-import { Router } from 'express';
 
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 

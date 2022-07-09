@@ -14,11 +14,9 @@
         "tags": ["Category"],
         "summary": "Create a category",
         "description": " Create a new category",
-        "security": [
-          { "beareAuth": [] }
-        ],
+        "security": [{ "beareAuth": [] }],
         "requestBody": {
-          "content":{
+          "content": {
             "application/json": {
               "schema": {
                 "type": "object",
@@ -51,28 +49,27 @@
         "tags": ["Category"],
         "summary": "List alll categories",
         "description": "List all categories",
-          "responses": {
-            "200":{
-              "description": "Success",
-              "content": {
-                "application/json": {
-                  "schema":{
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "description":{
-                          "type": "string"
-                        },
-                        "created_at": {
-                          "type": "string"
-                        }
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "created_at": {
+                        "type": "string"
                       }
                     }
                   }
@@ -80,21 +77,20 @@
               }
             }
           }
+        }
       }
     },
     "/categories/import": {
-      "post":{
+      "post": {
         "tags": ["Category"],
         "summary": "Upload a category list file",
         "description": "Upload a category list file.",
-        "security": [
-          { "beareAuth": [] }
-        ],
-        "requestBody":{
-          "content":{
+        "security": [{ "beareAuth": [] }],
+        "requestBody": {
+          "content": {
             "multipart/form-data": {
               "schema": {
-                "type":"object",
+                "type": "object",
                 "properties": {
                   "file": {
                     "type": "string",
@@ -105,7 +101,7 @@
             }
           }
         },
-        "responses":{
+        "responses": {
           "201": {
             "description": "Created"
           }
@@ -117,9 +113,7 @@
         "tags": ["Specifications"],
         "summary": "Create a specification",
         "description": "Create a new specification",
-        "security": [
-          { "beareAuth": [] }
-        ],
+        "security": [{ "beareAuth": [] }],
         "requestBody": {
           "content": {
             "application/json": {
@@ -140,7 +134,7 @@
       }
     },
     "/session": {
-      "post":{
+      "post": {
         "tags": ["Session"],
         "summary": "Authentication user",
         "description": "Authentitcation user",
@@ -148,12 +142,12 @@
           "content": {
             "application/json": {
               "schema": {
-                "type":"object",
-                "properties":{
+                "type": "object",
+                "properties": {
                   "email": {
-                    "type":"string"
+                    "type": "string"
                   },
-                  "password":{
+                  "password": {
                     "type": "string"
                   }
                 }
@@ -161,7 +155,7 @@
             }
           }
         },
-        "responses":{
+        "responses": {
           "200": {
             "description": "Success"
           },
@@ -176,14 +170,12 @@
         "tags": ["Cars"],
         "summary": "Create a new car",
         "description": "Create a new car",
-        "security": [
-          { "beareAuth": [] }
-        ],
+        "security": [{ "beareAuth": [] }],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref":"#/definations/Car"
+                "$ref": "#/definations/Car"
               }
             }
           }
@@ -203,9 +195,7 @@
         "tags": ["Cars"],
         "summary": "Upload images",
         "description": "Upload Images",
-        "security": [
-          { "beareAuth": [] }
-        ],
+        "security": [{ "beareAuth": [] }],
         "parameters": [
           {
             "name": "id",
@@ -218,15 +208,15 @@
           }
         ],
         "requestBody": {
-          "content":{
-            "multipart/form-data":{
+          "content": {
+            "multipart/form-data": {
               "schema": {
-                "type":"object",
+                "type": "object",
                 "properties": {
                   "images": {
                     "type": "array",
                     "items": {
-                      "type":"string",
+                      "type": "string",
                       "format": "binary"
                     }
                   }
@@ -235,7 +225,7 @@
             }
           }
         },
-        "responses":{
+        "responses": {
           "201": {
             "description": "Created"
           }
@@ -248,10 +238,10 @@
       "type": "object",
       "properties": {
         "name": {
-          "type":"string"
+          "type": "string"
         },
         "description": {
-          "type":"string"
+          "type": "string"
         }
       }
     },

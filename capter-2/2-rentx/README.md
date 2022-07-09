@@ -60,7 +60,7 @@ Deve ser possível realizar a devolução de um carro
 
 **RN**
 Se o carro for devolvid com menos de 24h, deverá ser cobrado diária completa.
-Ao realizar a devoção,  o carro dverá ser liberao para outro aluguel.
+Ao realizar a devoção, o carro dverá ser liberao para outro aluguel.
 Ao realizar a devolução, o usuário deverá ser liberado para outro aluguel.
 Ao realizar a devolução, deverá ser calculao o total do aluguel.
 Caso o horário de devolução seja superro ao horário previsto de entrega, deverá ser ocbrado multa proporcional aos dias de atraso.
