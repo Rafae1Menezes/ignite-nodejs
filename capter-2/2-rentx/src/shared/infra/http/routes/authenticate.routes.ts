@@ -1,3 +1,4 @@
+import { RefreshTokenController } from '@modules/accounts/useCases/refreshToken/RefreshTokenController';
 import { Router } from 'express';
 
 import { AuthenticationUserController } from '../../../../modules/accounts/useCases/AuthenticationUser/AuthenticationUserController';
@@ -5,7 +6,9 @@ import { AuthenticationUserController } from '../../../../modules/accounts/useCa
 const authenticateRoutes = Router();
 
 const authenticationUserController = new AuthenticationUserController();
+const refreshTokenController = new RefreshTokenController();
 
 authenticateRoutes.post('/session', authenticationUserController.handle);
+authenticateRoutes.post('/refresh-token', refreshTokenController.handle);
 
 export { authenticateRoutes };

@@ -25,6 +25,7 @@ describe('Create Rental', () => {
       dateProvider,
       carsRepository
     );
+
     car = await carsRepository.create({
       name: 'carro test',
       brand: 'marca teste',
