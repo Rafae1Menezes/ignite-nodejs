@@ -1,4 +1,4 @@
-import { ICreateUserTokenDTO } from '@modules/dtos/ICreateUserTOkenDTO';
+import { ICreateUserTokenDTO } from '@modules/dtos/ICreateUserTokenDTO';
 
 import { UserTokens } from '../infra/typeorm/entities/UserTokens';
 
@@ -15,6 +15,8 @@ interface IUsersTokensRepository {
   ): Promise<UserTokens>;
 
   deleteById(id: string): Promise<void>;
+
+  findyByRefreshToken(refresh_token: string): Promise<UserTokens>;
 }
 
 export { IUsersTokensRepository };

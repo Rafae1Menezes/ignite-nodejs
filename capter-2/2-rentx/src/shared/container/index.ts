@@ -1,4 +1,4 @@
-import '@shared/container/providers';
+import '@shared/container/providers/';
 
 import { container } from 'tsyringe';
 
