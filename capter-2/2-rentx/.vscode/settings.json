@@ -1,5 +1,4 @@
 {
-  "cSpell.words": [
-    "typeorm"
-  ]
+  "cSpell.words": ["typeorm"],
+  "livePreview.defaultPreviewPath": "/coverage/lcov-report/index.html"
 }
